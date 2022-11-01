@@ -10,22 +10,34 @@
 </head>
 
 <body>
-    <form>
+
+    <div class = "header">    
         <h1>Make Your Selection</h1>
-    <p>
         <h2>Let's Play!</h2>
         <h3>Best of 5 rounds!</h3>
+    </div>
+
+    
+    <div class = "buttons">
+        <p></p>
+       
+        <form>
         <input type ="button" onclick ="playRound('Rock')" value = "ROCK">
         <input type ="button" onclick ="playRound('Paper')" value = "PAPER">
         <input type ="button" onclick ="playRound('Scissors')" value = "SCISSORS">   
+    </div>
     </p>
 
-    <p>         
+    <div class = "image">        
         <img src="/images/alexKidd.jpeg" id="image" height="125px" width ="125px">
-    </p>
+    </div>
+
+    <div class = "resetButton">
     <p>
         <input type ="button" onclick ="resetGame()" value = "Reset Game">
     </p>
+    </div>
+
     </form>
 </body>
 </html>
