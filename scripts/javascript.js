@@ -35,50 +35,52 @@ function playRound(playerChoice){
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
         console.log('Tie');
-        changeImage('Tie');
     }
     else if (playerChoice == 'Rock' && computerChoice == 'Paper'){
         console.log('Computer Wins');
-        changeImage('Computer Wins');
         computerWinCounter++;        
     }
     else if (playerChoice == 'Rock' && computerChoice == 'Scissors'){
         console.log('Player Wins');
-        changeImage('Player Wins');
         playerWinCounter++;
     }
     //Player Chooses Paper
     else if (playerChoice == 'Paper' && computerChoice == 'Rock'){
         console.log('Player Wins');
-        changeImage('Player Wins');
         playerWinCounter++;
     }
     else if (playerChoice == 'Paper' && computerChoice == 'Paper'){
         console.log('Tie');
-        changeImage('Tie');
     }
     else if (playerChoice == 'Paper' && computerChoice == 'Scissors'){
         console.log('Computer Wins');
-        changeImage('Computer Wins');
         computerWinCounter++;
     }
     //Player Chooses Scissors
     else if (playerChoice == 'Scissors' && computerChoice == 'Rock'){
         console.log('Computer Wins');
-        changeImage('Computer Wins');
         computerWinCounter++;
     }
     else if (playerChoice == 'Scissors' && computerChoice == 'Paper'){
         console.log('Player Wins');
-        changeImage('Player Wins');
         playerWinCounter++;
     }
     else if (playerChoice == 'Scissors' && computerChoice == 'Scissors'){
         console.log('Tie');
-        changeImage('Tie');
     }
     console.log('Player Wins: '+ playerWinCounter);
     console.log('Computer Wins: '+ computerWinCounter);
+
+
+    if (playerWinCounter == 5){
+        console.log('You won the game!');
+        var image = document.getElementById('image');
+        image.src = "/images/alexKiddOnigiri.jpg";
+    }
+
+    if(computerWinCounter == 5 ){
+        console.log('You lose!');
+    }
 }
 
 
@@ -87,18 +89,6 @@ function resetGame(){
     computerWinCounter = 0;
     console.log('Win Counters Have Been Reset: ' + playerWinCounter);
 }
-
-    function changeImage(result){   
-        if (result == 'Player Wins'){
-            var image = document.getElementById('image');
-            image.src = "/images/alexKiddOnigiri.jpg";
-        }
-
-        else{
-            var image = document.getElementById('image');
-            image.src = "/images/alexKidd.jpeg";
-        }        
-    }
 
 
 
