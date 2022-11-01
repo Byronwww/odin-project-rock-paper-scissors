@@ -25,9 +25,13 @@ function setPlayerChoice(setPlayerChoice){
     return playerChoice;
 }
 
-function playGame(playerChoice){
+let computerWinCounter = 0;
+let playerWinCounter = 0;  
+
+function playRound(playerChoice){
     setPlayerChoice(playerChoice)  
     computerChoice = getComputerChoice();
+ 
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
         console.log('Tie');
@@ -36,15 +40,18 @@ function playGame(playerChoice){
     else if (playerChoice == 'Rock' && computerChoice == 'Paper'){
         console.log('Computer Wins');
         changeImage('Computer Wins');
+        computerWinCounter++;        
     }
     else if (playerChoice == 'Rock' && computerChoice == 'Scissors'){
         console.log('Player Wins');
         changeImage('Player Wins');
+        playerWinCounter++;
     }
     //Player Chooses Paper
     else if (playerChoice == 'Paper' && computerChoice == 'Rock'){
         console.log('Player Wins');
         changeImage('Player Wins');
+        playerWinCounter++;
     }
     else if (playerChoice == 'Paper' && computerChoice == 'Paper'){
         console.log('Tie');
@@ -53,20 +60,33 @@ function playGame(playerChoice){
     else if (playerChoice == 'Paper' && computerChoice == 'Scissors'){
         console.log('Computer Wins');
         changeImage('Computer Wins');
+        computerWinCounter++;
     }
     //Player Chooses Scissors
     else if (playerChoice == 'Scissors' && computerChoice == 'Rock'){
         console.log('Computer Wins');
         changeImage('Computer Wins');
+        computerWinCounter++;
     }
     else if (playerChoice == 'Scissors' && computerChoice == 'Paper'){
         console.log('Player Wins');
         changeImage('Player Wins');
+        playerWinCounter++;
     }
     else if (playerChoice == 'Scissors' && computerChoice == 'Scissors'){
         console.log('Tie');
         changeImage('Tie');
     }
+    console.log('Player Wins: '+ playerWinCounter);
+    console.log('Computer Wins: '+ computerWinCounter);
+}
+
+
+function resetGame(){
+    playerWinCounter = 0;
+    computerWinCounter = 0;
+    console.log('Win Counters Have Been Reset: ' + playerWinCounter);
+}
 
     function changeImage(result){   
         if (result == 'Player Wins'){
@@ -79,7 +99,7 @@ function playGame(playerChoice){
             image.src = "/images/alexKidd.jpeg";
         }        
     }
-}
+
 
 
 
