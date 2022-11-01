@@ -27,11 +27,14 @@ function setPlayerChoice(setPlayerChoice){
 
 let computerWinCounter = 0;
 let playerWinCounter = 0;  
+let roundCounter = 0;
 let gameOver = 0; 
 
 function playRound(playerChoice){
     setPlayerChoice(playerChoice)  
     computerChoice = getComputerChoice();
+    roundCounter++;
+
 if (gameOver == 0){
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
@@ -76,14 +79,14 @@ else if (gameOver == 1){
     console.log ('GAME OVER');
 }
 
-    if (playerWinCounter == 5){
+    if (roundCounter == 5 && playerWinCounter > computerWinCounter){
         console.log('You won the game!');
         var image = document.getElementById('image');
         image.src = "/images/alexKiddOnigiri.jpg";
         gameOver = 1;
     }
 
-    if(computerWinCounter == 5 ){
+    else if (roundCounter == 5 && playerWinCounter < computerWinCounter){
         console.log('You lose!');
         gameOver = 1;
         var image = document.getElementById('image');
@@ -91,10 +94,10 @@ else if (gameOver == 1){
     }
 }
 
-
 function resetGame(){
     playerWinCounter = 0;
     computerWinCounter = 0;
+    roundCounter = 0;
     gameOver = 0;
     console.log('Win Counters Have Been Reset: ' + playerWinCounter);
 }
