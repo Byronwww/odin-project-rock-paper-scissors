@@ -27,11 +27,12 @@ function setPlayerChoice(setPlayerChoice){
 
 let computerWinCounter = 0;
 let playerWinCounter = 0;  
+let gameOver = 0; 
 
 function playRound(playerChoice){
     setPlayerChoice(playerChoice)  
     computerChoice = getComputerChoice();
- 
+if (gameOver == 0){
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
         console.log('Tie');
@@ -70,16 +71,23 @@ function playRound(playerChoice){
     }
     console.log('Player Wins: '+ playerWinCounter);
     console.log('Computer Wins: '+ computerWinCounter);
-
+}
+else if (gameOver == 1){
+    console.log ('GAME OVER');
+}
 
     if (playerWinCounter == 5){
         console.log('You won the game!');
         var image = document.getElementById('image');
         image.src = "/images/alexKiddOnigiri.jpg";
+        gameOver = 1;
     }
 
     if(computerWinCounter == 5 ){
         console.log('You lose!');
+        gameOver = 1;
+        var image = document.getElementById('image');
+        image.src = "/images/gameOver.png";
     }
 }
 
@@ -87,6 +95,7 @@ function playRound(playerChoice){
 function resetGame(){
     playerWinCounter = 0;
     computerWinCounter = 0;
+    gameOver = 0;
     console.log('Win Counters Have Been Reset: ' + playerWinCounter);
 }
 
