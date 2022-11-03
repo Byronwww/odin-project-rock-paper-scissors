@@ -30,20 +30,22 @@ let playerWinCounter = 0;
 let roundCounter = 0;
 let gameOver = 0; 
 
+
+
 function playRound(playerChoice){
     setPlayerChoice(playerChoice)  
     computerChoice = getComputerChoice();
     roundCounter++;
+  
 
+if (gameOver == 0){
     var image = document.getElementById('playerSelectionImage');
     image.src = "/images/"+playerChoice+".jpeg";
 
 
     var image = document.getElementById('computerSelectionImage');
     image.src = "/images/"+computerChoice+".jpeg";
-    
 
-if (gameOver == 0){
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
         console.log('Tie');
@@ -82,6 +84,8 @@ if (gameOver == 0){
     }
     console.log('Player Wins: '+ playerWinCounter);
     console.log('Computer Wins: '+ computerWinCounter);
+    document.getElementById("playerScoreText").innerHTML = playerWinCounter;
+    document.getElementById("computerScoreText").innerHTML = computerWinCounter;
 }
 else if (gameOver == 1){
     console.log ('GAME OVER');
@@ -103,13 +107,7 @@ else if (gameOver == 1){
 }
 
 function resetGame(){
-    playerWinCounter = 0;
-    computerWinCounter = 0;
-    roundCounter = 0;
-    gameOver = 0;
-    console.log('Win Counters Have Been Reset: ' + playerWinCounter);
-    var image = document.getElementById('image');
-    image.src = "/images/alexKidd.jpeg";
+    location.reload();
 }
 
 
