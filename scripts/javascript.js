@@ -35,6 +35,14 @@ function playRound(playerChoice){
     computerChoice = getComputerChoice();
     roundCounter++;
 
+    var image = document.getElementById('playerSelectionImage');
+    image.src = "/images/"+playerChoice+".jpeg";
+
+
+    var image = document.getElementById('computerSelectionImage');
+    image.src = "/images/"+computerChoice+".jpeg";
+    
+
 if (gameOver == 0){
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
@@ -100,6 +108,8 @@ function resetGame(){
     roundCounter = 0;
     gameOver = 0;
     console.log('Win Counters Have Been Reset: ' + playerWinCounter);
+    var image = document.getElementById('image');
+    image.src = "/images/alexKidd.jpeg";
 }
 
 

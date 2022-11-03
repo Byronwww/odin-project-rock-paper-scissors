@@ -25,6 +25,18 @@ body{
     justify-content: center;   
 }
 
+.selection{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;   
+}
+
+.computerSelection{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;   
+}
+
 .resetButton{
     display:flex;
     flex-direction:row;
