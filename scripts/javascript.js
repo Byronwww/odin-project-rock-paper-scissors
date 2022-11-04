@@ -88,7 +88,9 @@ if (gameOver == 0){
     document.getElementById("computerScoreText").innerHTML = computerWinCounter;
 }
 else if (gameOver == 1){
-    console.log ('GAME OVER');
+    if (confirm("Game Over - Restart Game?")){
+        resetGame();
+    }
 }
 
     if (roundCounter == 5 && playerWinCounter > computerWinCounter){
