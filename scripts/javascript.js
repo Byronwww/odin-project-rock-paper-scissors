@@ -40,11 +40,11 @@ function playRound(playerChoice){
 
 if (gameOver == 0){
     var image = document.getElementById('playerSelectionImage');
-    image.src = "./images/"+playerChoice+".jpeg";
+    image.src = "images/"+playerChoice+".jpeg";
 
 
     var image = document.getElementById('computerSelectionImage');
-    image.src = "./images/"+computerChoice+".jpeg";
+    image.src = "images/"+computerChoice+".jpeg";
 
     //Player Chooses Rock
     if (playerChoice == 'Rock' && computerChoice == 'Rock'){
@@ -96,7 +96,7 @@ else if (gameOver == 1){
     if (roundCounter == 5 && playerWinCounter > computerWinCounter){
         console.log('You won the game!');
         var image = document.getElementById('image');
-        image.src = "./images/alexKiddOnigiri.jpg";
+        image.src = "images/alexKiddOnigiri.jpg";
         gameOver = 1;
     }
 
@@ -104,7 +104,7 @@ else if (gameOver == 1){
         console.log('You lose!');
         gameOver = 1;
         var image = document.getElementById('image');
-        image.src = "./images/gameOver.png";
+        image.src = "images/gameOver.png";
     }
 }
 
