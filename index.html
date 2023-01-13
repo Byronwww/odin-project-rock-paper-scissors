@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href = "css/style.css">
-    <script type = "text/javascript" src ="scripts/javascript.js"></script>
+    <script defer type = "text/javascript" src ="scripts/javascript.js"></script>
     <title>Odin Project - Rock Paper Scissors JavaScript Project</title>
 </head>
 
@@ -19,12 +19,9 @@
 
     
     <div class = "buttons">
-        <p></p>
-       
-        <form>
-        <input type ="button" onclick ="playRound('Rock')" value = "ROCK">
-        <input type ="button" onclick ="playRound('Paper')" value = "PAPER">
-        <input type ="button" onclick ="playRound('Scissors')" value = "SCISSORS">   
+        <button id = "buttonRock">Rock</button>
+        <button id = "buttonPaper">Paper</button>
+        <button id = "buttonScissors">Scissors</button>
     </div>
     </p>
 
@@ -56,7 +53,7 @@
 
     <div class = "resetButton">
     <p>
-        <input type ="button" onclick ="resetGame()" value = "Reset Game">
+        <button id = "buttonResetGame">Reset Game</button>
     </p>
     </div>
 
