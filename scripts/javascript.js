@@ -1,5 +1,5 @@
 /**
- * Picks a random number between 1 and 4 and changes this to a 
+ * Picks a random number between 1 and 4 and changes this to a
  * string to return as the computers choice in the game
  * @return {string} the computers choice of rock, paper or scissors as a string
  */
@@ -36,6 +36,22 @@ let playerWinCounter = 0;
 let roundCounter = 0;
 let gameOver = 0;
 
+
+const buttonRock = document.querySelector('#buttonRock');
+buttonRock.addEventListener('click', () => {
+  playRound('Rock');
+});
+
+const buttonPaper = document.querySelector('#buttonPaper');
+buttonPaper.addEventListener('click', () => {
+  playRound('Paper');
+});
+
+const buttonScissors = document.querySelector('#buttonScissors');
+buttonScissors.addEventListener('click', () => {
+  playRound('Scissors');
+});
+
 /**
  * Handles the logic of playing a single round
  * The players choice is set, the computers choice is called and retrieved
@@ -50,11 +66,11 @@ function playRound(playerChoice) {
 
 
   if (gameOver == 0) {
-    let imagePlayer = document.getElementById('playerSelectionImage');
+    const imagePlayer = document.getElementById('playerSelectionImage');
     image.src = 'images/'+playerChoice+'.jpeg';
 
 
-    let imageCPU = document.getElementById('computerSelectionImage');
+    const imageCPU = document.getElementById('computerSelectionImage');
     image.src = 'images/'+computerChoice+'.jpeg';
 
     // Player Chooses Rock
@@ -66,8 +82,7 @@ function playRound(playerChoice) {
     } else if (playerChoice == 'Rock' && computerChoice == 'Scissors') {
       console.log('Player Wins');
       playerWinCounter++;
-    } // Player Chooses Paper
-    else if (playerChoice == 'Paper' && computerChoice == 'Rock') {
+    } else if (playerChoice == 'Paper' && computerChoice == 'Rock') {
       console.log('Player Wins');
       playerWinCounter++;
     } else if (playerChoice == 'Paper' && computerChoice == 'Paper') {
@@ -75,9 +90,7 @@ function playRound(playerChoice) {
     } else if (playerChoice == 'Paper' && computerChoice == 'Scissors') {
       console.log('Computer Wins');
       computerWinCounter++;
-    }
-    // Player Chooses Scissors
-    else if (playerChoice == 'Scissors' && computerChoice == 'Rock') {
+    } else if (playerChoice == 'Scissors' && computerChoice == 'Rock') {
       console.log('Computer Wins');
       computerWinCounter++;
     } else if (playerChoice == 'Scissors' && computerChoice == 'Paper') {
@@ -98,16 +111,21 @@ function playRound(playerChoice) {
 
   if (roundCounter == 5 && playerWinCounter > computerWinCounter) {
     console.log('You won the game!');
-    let imagePlayer = document.getElementById('image');
+    const imagePlayer = document.getElementById('image');
     image.src = 'images/alexKiddOnigiri.jpg';
     gameOver = 1;
   } else if (roundCounter == 5 && playerWinCounter < computerWinCounter) {
     console.log('You lose!');
     gameOver = 1;
-    let imagePlayer = document.getElementById('image');
+    const imagePlayer = document.getElementById('image');
     image.src = 'images/gameOver.png';
   }
 }
+
+const buttonResetGame = document.querySelector('#buttonResetGame');
+buttonResetGame.addEventListener('click', () => {
+  resetGame();
+});
 
 /**
  * resets the game by reloading the page
