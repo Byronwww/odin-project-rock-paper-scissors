@@ -119,6 +119,11 @@ function playRound(playerChoice) {
     gameOver = 1;
     const imagePlayer = document.getElementById('image');
     image.src = 'images/gameOver.png';
+  } else if (roundCounter == 5 && playerWinCounter == computerWinCounter) {
+    console.log('TIE');
+    gameOver = 1;
+    const imagePlayer = document.getElementById('image');
+    image.src = 'images/tie.jpeg';
   }
 }
 
