@@ -1,3 +1,24 @@
+let computerWinCounter;
+let playerWinCounter;
+let roundCounter;
+let gameOver;
+
+
+initialGameState();
+
+/**
+ * Handles the setting of the initial game state variables and
+ * is used to reset the game
+ */
+function initialGameState() {
+  computerWinCounter = 0;
+  playerWinCounter = 0;
+  roundCounter = 0;
+  gameOver = 0;
+  const imagePlayer = document.getElementById('image');
+  image.src = 'images/alexKidd.jpeg';
+}
+
 /**
  * Picks a random number between 1 and 3
  * and uses it to pick the computers choice from an array by index
@@ -20,11 +41,6 @@ function setPlayerChoice(setPlayerChoice) {
   console.log('Player Choice:' + playerChoice);
   return playerChoice;
 }
-
-let computerWinCounter = 0;
-let playerWinCounter = 0;
-let roundCounter = 0;
-let gameOver = 0;
 
 
 const buttonRock = document.querySelector('#buttonRock');
@@ -95,7 +111,7 @@ function playRound(playerChoice) {
     document.getElementById('computerScoreText').innerHTML = computerWinCounter;
   } else if (gameOver == 1) {
     if (confirm('Game Over - Restart Game?')) {
-      resetGame();
+      initialGameState();
     }
   }
 
@@ -119,13 +135,5 @@ function playRound(playerChoice) {
 
 const buttonResetGame = document.querySelector('#buttonResetGame');
 buttonResetGame.addEventListener('click', () => {
-  resetGame();
+  initialGameState();
 });
-
-/**
- * resets the game by reloading the page
- */
-function resetGame() {
-  location.reload();
-}
-
