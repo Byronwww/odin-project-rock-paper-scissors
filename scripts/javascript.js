@@ -1,23 +1,13 @@
 /**
- * Picks a random number between 1 and 4 and changes this to a
- * string to return as the computers choice in the game
- * @return {string} the computers choice of rock, paper or scissors as a string
+ * Picks a random number between 1 and 3
+ * and uses it to pick the computers choice from an array by index
+ * @return {string} the computers choice of 'Rock', 'Paper' or 'Scissors'
  */
 function getComputerChoice() {
-  let computerChoice = (Math.random() * (4 - 1) + 1);
-  computerChoice = Math.trunc(computerChoice);
-
-  if (computerChoice == 1) {
-    choiceConverted = 'Rock';
-  } else if (computerChoice == 2) {
-    choiceConverted = 'Paper';
-  } else if (computerChoice == 3) {
-    choiceConverted = 'Scissors';
-  } else {
-    console.log('Error!');
-  }
-  console.log('Computer Choice: ' + choiceConverted);
-  return (choiceConverted);
+  const computerChoice = Math.trunc(Math.random() * (4 - 1));
+  const computerOptions = ['Rock', 'Paper', 'Scissors'];
+  console.log('Computer Choice: ' + computerOptions[computerChoice]);
+  return (computerOptions[computerChoice]);
 }
 
 /**
